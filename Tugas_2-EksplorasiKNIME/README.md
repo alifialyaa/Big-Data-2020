@@ -163,10 +163,16 @@ Untuk mencetak timestamp dan model, gunakan node **timestamp & model**. Setelah 
 Bagian ini terdiri dari tiga soal, yaitu Setup Hive, Modelling, dan Writing to DB
 ### 01. Setup Hive
 Jalankan semua node yang berada dalam soal. Sesuaikan nama tabel di pengaturan dengan tabel yang dimiliki.
+
+Pengaturan node Create Local Big Data Environment:
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_create%20local%20big%20data%20environment.png" width="500"/>
+
+Pengaturan node-node pada annotation tabel ss13pme:
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_Table%20creator%20ss13pme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_table%20reader%20ss13pme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_db%20loader%20ss13pme.png" width="500"/>
+
+Pengaturan node-node pada annotation tabel ss13hme:
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_table%20creator%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_table%20reader%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_db%20loader%20ss13hme.png" width="500"/>
@@ -181,3 +187,8 @@ Untuk mengecek apakah tabel sudah terbuat atau belum, bisa dilihat di Hive. Dala
 Setelah tersambung, lakukan query sederhana seperti `SELECT*`.  Apabila tabel sudah terbuat, hasil query akan keluar.
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_query%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_query%20ss13pme.png" width="500"/>
+
+### 01. Modelling
+Tahapan-tahapannya hampir sama dengan latihan DB Modelling. Untuk mengerjakan latihan ini, ganti node SQLite Connector dengan node Create Local Big Data Environment yang ada di latihan 0 (Setup Hive), lalu sambungkan.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/1_Modeling/2_1_Alur.png" width="700"/>
