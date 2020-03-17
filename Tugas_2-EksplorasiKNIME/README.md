@@ -1,11 +1,24 @@
 # Tugas 02 - Explorasi KNIME Big Data
+Dibuat oleh:
+Nama : Alifiannisa Alyahasna Wighneswara
+NRP  : 05111740000011
+
+## Daftar Isi
+ - [DB](#Data)
+	 - [DB Connect](#01_DB_Connect)
+	 - [InDB Processing](#02_InDB_processing)
+	 - [Modelling](#03_Modelling)
+	 - [Writing to DB](#04_Writing_to_DB)
+ - [Hadoop](#Hadoop)
+	 - [Setup Hive](#00_Setup_Hive)
+	 - [Modelling](#01_Modelling)
+	 - [Writing to DB](#02_Writing_to_DB)
 
 
-
-## Data
+## DB
 Bagian ini terdiri dari empat soal, yaitu DB Connect, InDB Processing, Modelling, dan Writing to DB.
 
-### 01. DB Connect
+### 01_DB_Connect
 Sebelum melakukan koneksi ke SQLite, saya sudah mengubah nama-nama tabel yang ada dengan menggunakan SQLite CLI. 
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/1_DBConnect/1_1_daftar%20tabel.png" width="500"/>
@@ -28,7 +41,7 @@ Gunakan node DB Reader untuk membuka tabel yang dipilih. Sambungkan dengan node 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/1_DBConnect/1_1_full.png" alt="drawing" width="350"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/1_DBConnect/1_1_Data%20table.png" width="900"/>
 
-### 02. InDB processing
+### 02_InDB_processing
  **1. Gabungkan ss13hme dan ss13pme menggunakan variabel serialno, dan hapus kolom dengan nama PUMA dan PWGTP dari masing-masing tabel.**
 
 Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masukkan path file .sqlite ke dalam konfigurasi, lalu jalankan.
@@ -91,7 +104,7 @@ Gunakan node DB Reader untuk melihat hasilnya.
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/2_InDBProcessing/1_2_full%20poin%20e.png" width="500"/>
 
 
-### 03. Modelling
+### 03_Modelling
 
 **1. Lakukan training Decision Tree pada variabel cow dimana nilai cow `NOT NULL`.**
 
@@ -126,7 +139,7 @@ Sambungkan DB Reader dengan nilai cow NULL dengan node **Decision Tree Predictor
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/3_Modelling/1_3_hasil%20prediksi.png" width="900"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_DB/3_Modelling/1_3_alur.png" width="500"/>
 
-### 04. Writing to DB
+### 04_Writing_to_DB
 
 **1. Tulis ulang tabel asli nrp05111740000011_ss13pme dengan nama nrp05111740000011_ss13pme_original table**
 
@@ -161,7 +174,7 @@ Untuk mencetak timestamp dan model, gunakan node **timestamp & model**. Setelah 
 
 ## Hadoop
 Bagian ini terdiri dari tiga soal, yaitu Setup Hive, Modelling, dan Writing to DB
-### 01. Setup Hive
+### 01_Setup_Hive
 Jalankan semua node yang berada dalam soal. Sesuaikan nama tabel di pengaturan dengan tabel yang dimiliki.
 
 Pengaturan node Create Local Big Data Environment:
@@ -188,12 +201,12 @@ Setelah tersambung, lakukan query sederhana seperti `SELECT*`.  Apabila tabel su
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_query%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_query%20ss13pme.png" width="500"/>
 
-### 01. Modelling
+### 01_Modelling
 Tahapan-tahapannya hampir sama dengan latihan DB Modelling. Untuk mengerjakan latihan ini, ganti node SQLite Connector dengan node Create Local Big Data Environment yang ada di latihan 0 (Setup Hive), lalu sambungkan.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/1_Modeling/2_1_Alur.png" width="700"/>
 
-### 02. Writing to DB
+### 02_Writing_to_DB
 **1. Simpan hasilnya dalam tabel baru bernama "newtable" di Hive menggunakan HDFS Connection pada Local Big Data Environment, bersamaan dengan kombinasi dari node-node DB Table Creator dan DB loader.**
 
 Untuk mengerjakan soal ini, bisa dilanjutkan dari jawaban soal sebelumnya.
