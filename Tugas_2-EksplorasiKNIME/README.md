@@ -170,11 +170,13 @@ Jalankan semua node yang berada dalam soal. Sesuaikan nama tabel di pengaturan d
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_table%20creator%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_table%20reader%20ss13hme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_db%20loader%20ss13hme.png" width="500"/>
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_alur.png" width="900"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_alur.png" width="700"/>
+
 
 Untuk mengecek apakah tabel sudah terbuat atau belum, bisa dilihat di Hive. Dalam kasus ini, saya menggunakan DBeaver. Hive dan local big data environment dicocokkan dengan koneksi `jdbc:hive2://localhost:53696/default`.
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_local%20environment%20hive%20connection.png" width="400"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_setting%20koneksi%20Hive%20di%20DBeaver.png" width="500"/>
+
 
 Setelah tersambung, lakukan query sederhana seperti `SELECT*`.  Apabila tabel sudah terbuat, hasil query akan keluar.
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/0_SetupHive/2_0_query%20ss13hme.png" width="500"/>
