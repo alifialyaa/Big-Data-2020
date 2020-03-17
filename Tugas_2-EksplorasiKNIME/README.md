@@ -40,7 +40,7 @@ Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masuk
 Selanjutnya, pilih tabel-tabel yang akan digunakan menggunakan node **DB Table Selector**. Ada dua tabel yang akan digunakan, yaitu nrp05111740000011_ss13hme dan nrp05111740000011_ss13pme.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_konfigurasi%20ss13hme.png" width="500"/>
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20ss13pme.pngg" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20ss13pme.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_connector%20dan%20table%20selector.png" width="300"/>
 
 Gabungkan dua tabel menggunakan node DB Joiner dengan mode inner join berdasarkan variabel serialno. Lalu, sambungkan dengan node **DB Reader** untuk membuka hasil join.
