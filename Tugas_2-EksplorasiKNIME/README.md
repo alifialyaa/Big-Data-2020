@@ -1,6 +1,8 @@
 # Tugas 02 - Explorasi KNIME Big Data
 Dibuat oleh:
+
 Nama : Alifiannisa Alyahasna Wighneswara
+
 NRP  : 05111740000011
 
 ## Daftar Isi
