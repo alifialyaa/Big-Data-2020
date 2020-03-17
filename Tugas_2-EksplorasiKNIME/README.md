@@ -19,14 +19,14 @@ Gunakan node SQLite Connector untuk menghubungkan KNIME dengan SQLite. Masukkan 
 
 Gunakan node table selector untuk memilih tabel yang ingin dibuka. Sambungkan dengan node sebelumnya dan pilih tabel yang akan dibuka. Dalam eksplorasi ini, tabel yang akan dibuka adalah tabel nrp05111740000011_ss13pme.
 
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_DB%20Table%20Selector%20configuration.png" alt="drawing" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_DB%20Table%20Selector%20configuration.png"  width="500"/>
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_connector%20dan%20table%20selector.png" width="250"/>
 
 Gunakan node DB Reader untuk membuka tabel yang dipilih. Sambungkan dengan node DB Table Selector dan DB sudah bisa dibaca.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_full.png" alt="drawing" width="350"/>
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_Data%20table.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_Data%20table.png" width="900"/>
 
 ### 02. InDB processing
  **1. Gabungkan ss13hme dan ss13pme menggunakan variabel serialno, dan hapus kolom dengan nama PUMA dan PWGTP dari masing-masing tabel.**
@@ -51,8 +51,9 @@ Gabungkan dua tabel menggunakan node DB Joiner dengan mode inner join berdasarka
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_hasil%20A.png" width="500"/>
 
 
- **2. Saring semua baris dengan nilai cow `NULL`.
- 3. Saring semua baris dengan nilai cow `NOT NULL`.**
+ **2. Saring semua baris dengan nilai cow `NULL`.**
+ 
+ **3. Saring semua baris dengan nilai cow `NOT NULL`.**
 
 Untuk melakukan filter pada baris, dapat digunakan node DB Row Filter. Pada latihan ini, gunakan dua row filter. Satu row filter akan digunakan untuk mencari baris dengan nilai cow `NULL` dan satunya lagi digunakan untuk mencari nilai cow `NOT NULL`. Gabungkan masing-masing node row filter dengan DB reader jika ingin melihat hasil filter.
 
@@ -86,7 +87,7 @@ Setelah itu, gunakan node DB Query untuk memilih 10 nilai teratas. Syntax yang a
 Gunakan node DB Reader untuk melihat hasilnya.
 
 
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_hasil%20query.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_hasil%20query.png" width="900"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_full%20poin%20e.png" width="500"/>
 
 
@@ -100,29 +101,29 @@ Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masuk
 
 Selanjutnya, pilih tabel-tabel yang akan digunakan menggunakan node **DB Table Selector**. Pilih tabel nrp05111740000011_ss13pme.
 
-*isi config select tabel 13pme
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20ss13pme.png" width="500"/>
 
 Buang kolom PUMA dan PWGTP menggunakan node **DB Column Filter**.
 
-*isi config db column filter disini
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_config%20column%20filter%20puma%20pwgtp.png" width="500"/>
 
 Untuk melakukan filter pada baris, dapat digunakan node DB Row Filter. Pada latihan ini, gunakan dua row filter. Satu row filter akan digunakan untuk mencari baris dengan nilai cow `NULL` dan satunya lagi digunakan untuk mencari nilai cow `NOT NULL`. Gabungkan masing-masing node row filter dengan DB reader jika ingin melihat hasil filter.
 
-*insert config null
-*insert config not null
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_cow%20is%20not%20null.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_cow%20is%20null.png" width="500"/>
 
 Ubah angka pada hasil filter cow `IS NULL` menjadi string sebelum dilakukan training menggunakan node **Number to String**.
 
-*insert config num to string
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_config%20num%20to%20string.png" width="500"/>
 
 Untuk melakukan training, gunakan node **Decision Tree Learner** yang disambungkan dengan node Number to String.
 
-*insert config dt learner
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_dt%20learner.png" width="500"/>
 
 **2. Gunakan decision tree untuk memprediksi nilai cow yang hilang.**
 Sambungkan DB Reader dengan nilai cow NULL dengan node **Decision Tree Predictor**. Node ini membutuhkan dua input, yaitu DB Reader dan hasil training sebelumnya.
 
-*insert hasil
-*insert seri
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_hasil%20prediksi.png" width="900"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_alur.png" width="500"/>
 
 
