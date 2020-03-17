@@ -192,3 +192,23 @@ Setelah tersambung, lakukan query sederhana seperti `SELECT*`.  Apabila tabel su
 Tahapan-tahapannya hampir sama dengan latihan DB Modelling. Untuk mengerjakan latihan ini, ganti node SQLite Connector dengan node Create Local Big Data Environment yang ada di latihan 0 (Setup Hive), lalu sambungkan.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/1_Modeling/2_1_Alur.png" width="700"/>
+
+### 02. Writing to DB
+**1. Simpan hasilnya dalam tabel baru bernama "newtable" di Hive menggunakan HDFS Connection pada Local Big Data Environment, bersamaan dengan kombinasi dari node-node DB Table Creator dan DB loader.**
+
+Untuk mengerjakan soal ini, bisa dilanjutkan dari jawaban soal sebelumnya.
+
+Hasil filter baris dengan nilai cow `NOT NULL`digabungkan dengan hasil prediksi decision tree menggunakan node **Concatenate**.
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/2_WritingtoDB/2_2_concatenate%20nodes.png" width="500"/>
+
+Buat tabel baru dengan nama nrp05111740000011_newtable menggunakan node DB Table Creator, disambungkan dengan node Concatenate dan Local Big Data Environment.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/2_WritingtoDB/2_2_table%20creator.png" width="500"/>
+
+Untuk menyimpan tabel di Hive, digunakan node **DB Loader**. Node ini membutuhkan empat masukan, yaitu DB Table Creator, Local Big Data Environment, String Manipulation, dan Concatenate. 
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/2_WritingtoDB/2_2_DB%20Loader.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/2_WritingtoDB/2_2_alur.png" width="800"/>
+
+Untuk mengecek apakah tabel nrp05111740000011_newtable sudah terbuat di Hive, bisa dilakukan query di DBeaver. Apabila hasil query keluar, itu berarti tabel sudah berhasil dibuat.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/2_Hadoop/2_WritingtoDB/2_2_query%20new%20table.png" width="500"/>
