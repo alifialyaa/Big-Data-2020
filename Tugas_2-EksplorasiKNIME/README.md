@@ -76,11 +76,12 @@ Gunakan node DB Reader untuk melihat hasilnya.
 
 Untuk mengurutkan nilai agep, gunakan node DB Sorter, lalu atur sehingga node dapat mengurutkan data berdasarkan nilai agep secara descending.
 
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_group%20by%20sex.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%2010%20nilai%20teratas.png" width="500"/>
+
 
 Setelah itu, gunakan node DB Query untuk memilih 10 nilai teratas. Syntax yang akan dijalankan adalah `SELECT * FROM #table# AS "table" limit 10`
 
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%2010%20nilai%20teratas.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20query.png" width="500"/>
 
 Gunakan node DB Reader untuk melihat hasilnya.
 
