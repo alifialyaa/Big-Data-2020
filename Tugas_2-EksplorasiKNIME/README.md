@@ -155,5 +155,6 @@ Setelah selesai, gunakan node DB Update untuk melakukan update pada database. In
 **3. (Opsional) Tuliskan model Decision Tree dengan timestamp menjadi tabel baru bernama 'model'**
 
 Untuk mencetak timestamp dan model, gunakan node **timestamp & model**. Setelah itu, buat tabel baru di database menggunakan node DB Writer.
+
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_%20config%20db%20writer.png" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_alur.png" width="800"/>
