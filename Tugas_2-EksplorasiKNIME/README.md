@@ -3,7 +3,7 @@
 
 
 ## Data
-Bagian ini terdiri dari empat soal, yaitu DB Connect, InDB Processing, yeyeye, dan huhuhu.
+Bagian ini terdiri dari empat soal, yaitu DB Connect, InDB Processing, Modelling, dan Writing to DB.
 
 ### 01. DB Connect
 Sebelum melakukan koneksi ke SQLite, saya sudah mengubah nama-nama tabel yang ada dengan menggunakan SQLite CLI. 
@@ -126,4 +126,34 @@ Sambungkan DB Reader dengan nilai cow NULL dengan node **Decision Tree Predictor
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_hasil%20prediksi.png" width="900"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/3_Modelling/1_3_alur.png" width="500"/>
 
+### 04. Writing to DB
 
+**1. Tulis ulang tabel asli nrp05111740000011_ss13pme dengan nama nrp05111740000011_ss13pme_original table**
+
+**1. Lakukan training Decision Tree pada variabel cow dimana nilai cow `NOT NULL`.**
+
+Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masukkan path file .sqlite ke dalam konfigurasi, lalu jalankan.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_SQLite%20Connector%20configuration.png" width="500"/>
+
+Selanjutnya, pilih tabel-tabel yang akan digunakan menggunakan node **DB Table Selector**. Pilih tabel nrp05111740000011_ss13pme.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20ss13pme.png" width="500"/>
+
+Untuk menulis tabel baru di database, gunakan node DB Connection Table Writer. Pada pengaturannya, buat tabel baru bernama nrp05111740000011_ss13pme_originaltable
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_config%20table%20writer.png" width="500"/>
+
+**2. Perbarui semua baris pada tabel ss13pme dengan keluaran dari predictor node.**
+
+Lakukan tahapan yang sama dengan nomor sebelumnya. 
+
+Setelah selesai, gunakan node DB Update untuk melakukan update pada database. Input dari node ini adalah koneksi SQLite di awal dan hasil prediksi dari Decision Tree.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_config%20db%20update.png" width="500"/>
+
+**3. (Opsional) Tuliskan model Decision Tree dengan timestamp menjadi tabel baru bernama 'model'**
+
+Untuk mencetak timestamp dan model, gunakan node **timestamp & model**. Setelah itu, buat tabel baru di database menggunakan node DB Writer.
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_%20config%20db%20writer.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/4_WriteToDB/1_4_alur.png" width="800"/>
