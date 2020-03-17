@@ -87,8 +87,42 @@ Gunakan node DB Reader untuk melihat hasilnya.
 
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_hasil%20query.png" width="500"/>
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_full%20poin%20e.png" width="400"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_full%20poin%20e.png" width="500"/>
 
 
+### 03. Modelling
+
+**1. Lakukan training Decision Tree pada variabel cow dimana nilai cow `NOT NULL`.**
+
+Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masukkan path file .sqlite ke dalam konfigurasi, lalu jalankan.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/1_DBConnect/1_1_SQLite%20Connector%20configuration.png" width="500"/>
+
+Selanjutnya, pilih tabel-tabel yang akan digunakan menggunakan node **DB Table Selector**. Pilih tabel nrp05111740000011_ss13pme.
+
+*isi config select tabel 13pme
+
+Buang kolom PUMA dan PWGTP menggunakan node **DB Column Filter**.
+
+*isi config db column filter disini
+
+Untuk melakukan filter pada baris, dapat digunakan node DB Row Filter. Pada latihan ini, gunakan dua row filter. Satu row filter akan digunakan untuk mencari baris dengan nilai cow `NULL` dan satunya lagi digunakan untuk mencari nilai cow `NOT NULL`. Gabungkan masing-masing node row filter dengan DB reader jika ingin melihat hasil filter.
+
+*insert config null
+*insert config not null
+
+Ubah angka pada hasil filter cow `IS NULL` menjadi string sebelum dilakukan training menggunakan node **Number to String**.
+
+*insert config num to string
+
+Untuk melakukan training, gunakan node **Decision Tree Learner** yang disambungkan dengan node Number to String.
+
+*insert config dt learner
+
+**2. Gunakan decision tree untuk memprediksi nilai cow yang hilang.**
+Sambungkan DB Reader dengan nilai cow NULL dengan node **Decision Tree Predictor**. Node ini membutuhkan dua input, yaitu DB Reader dan hasil training sebelumnya.
+
+*insert hasil
+*insert seri
 
 
