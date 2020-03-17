@@ -40,8 +40,8 @@ Gunakan node **SQLite Connector** untuk menghubungkan KNIME dengan SQLite. Masuk
 Selanjutnya, pilih tabel-tabel yang akan digunakan menggunakan node **DB Table Selector**. Ada dua tabel yang akan digunakan, yaitu nrp05111740000011_ss13hme dan nrp05111740000011_ss13pme.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_konfigurasi%20ss13hme.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%20ss13pme.pngg" width="500"/>
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_connector%20dan%20table%20selector.png" width="300"/>
-**insert config ss13pme**
 
 Gabungkan dua tabel menggunakan node DB Joiner dengan mode inner join berdasarkan variabel serialno. Lalu, sambungkan dengan node **DB Reader** untuk membuka hasil join.
 
@@ -65,8 +65,7 @@ Untuk melakukan filter pada baris, dapat digunakan node DB Row Filter. Pada lati
 Gunakan node **DB GroupBy** untuk mengelompokkan data berdasarkan variabel sex. Node ini juga bisa digunakan untuk melakukan penghitungan rata-rata pada pengaturan Manual Aggregation.
 
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_group%20by%20sex.png" width="500"/>
-**
-insert config avg**
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_calculate%20average.png" width="500"/>
 
 Gunakan node DB Reader untuk melihat hasilnya.
 
@@ -77,16 +76,17 @@ Gunakan node DB Reader untuk melihat hasilnya.
 
 Untuk mengurutkan nilai agep, gunakan node DB Sorter, lalu atur sehingga node dapat mengurutkan data berdasarkan nilai agep secara descending.
 
-**insert cinfig agep desc**
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_group%20by%20sex.png" width="500"/>
 
 Setelah itu, gunakan node DB Query untuk memilih 10 nilai teratas. Syntax yang akan dijalankan adalah `SELECT * FROM #table# AS "table" limit 10`
 
-**insert config top 10**
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_config%2010%20nilai%20teratas.png" width="500"/>
 
 Gunakan node DB Reader untuk melihat hasilnya.
 
-**insert seri
-insert hasil**
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_hasil%20query.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_2-EksplorasiKNIME/Gambar/1_Data/2_InDBProcessing/1_2_full%20poin%20e.png" width="400"/>
 
 
 
