@@ -2,7 +2,7 @@
 
 Folder ini berisi jawaban tugas 3 kelas Big Data oleh Alifiannisa Alyahasna Wighneswara (05111740000011), yaitu implementasi implementasi algoritma colaborative filtering pada rekomendasi film.
 
- ![Workflow Movie Recommendation](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/0_Workflow%20benar.png)
+ ![Workflow Movie Recommendation](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png)
 
 ## Business Understanding
 **MovieLens 20M Ratings dataset** adalah sebuah dataset yang berisi kumpulan penilaian user terhadap film. Dataset ini dibuat oleh GroupLens, sebuah lab riset milik Department of Computer Science and Engineering, University of Minnesota.
@@ -21,24 +21,29 @@ Dataset ini terdiri dari 6 file, yaitu genome-scores.csv, genome-tags.csv, links
 
 ## Data Preparation
 Sebelumnya, buat local big data environment terlebih dahulu menggunakan node **Create Local Big Data Environment**.
+![Pembuatan LDBE](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/8_CreateLocalBigData.png)
 
 ### movies.csv
 Pada data preparation, file CSV harus dibuka terlebih dahulu menggunakan node **File Reader**. Adapun pengaturannya adalah sebagai berikut.
 
-![Pengaturan File Reader](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/3_Konfigurasi%20CSV%20Reader.png)
+![Pengaturan File Reader](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/2_MovieFileReader.png)
 
-![Hasil File Reader](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/3_Screenshot%20CSV%20Reader.png)
+
 Setelah itu, tambahkan timestamp dan user ID menggunakan **add fields**. Di dalamnya terdapat beberapa node, yaitu **Component Input, Shuffle, Constant Value Column (untuk memasukkan timestamp), Constant Value Column (untuk memasukkan userID), dan Component Output**.
 
-![Rangkaian add fields](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/3_Screenshot%20CSV%20Reader.png)
+![Rangkaian add fields](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/2_AddFields.png)
 Selanjutnya, data dibagi menjadi 2. Bagian pertama merupakan data yang diambil 20 baris teratas menggunakan node **Row Splitter**, dan bagian kedua adalah sisanya. 
 
-![Top Partition](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/3_Top%20partitions.png)
+![Row Splitter](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/4_rowsplitter20.png)
 
-![Bottom partition](https://github.com/alifialyaa/BigData_Tugas01_ETLmenggunakanKNIME/blob/master/Gambar/3_Bottom%20partitions.png)
 Top partition akan masuk ke field **Ask User for Movie Ratings**, dan bottom partition akan masuk ke dalam field **no rating**.
 
+![Ask User for Movie Ratings](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/5_AskUserForMovieRating.png)
+
 Node Ask User for Movie Ratings berisi beberapa komponen, yaitu **Component Input, Constant Value Column, Table Editor, Column Filter, Column Resorter, Row Filter, Text Output, dan Component Output.**
+
+
+![no rating](https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/6_norating.png)
 
 
 Node no ratings berisi beberapa komponen, yaitu **Component Input, Constant Value Column, Column Filter, Column Resorter, dan Component Output.**
