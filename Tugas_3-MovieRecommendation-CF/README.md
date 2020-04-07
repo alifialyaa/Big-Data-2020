@@ -64,18 +64,22 @@ Selanjutnya, bagi data menjadi 2 dengan perbandingan 80%-20% untuk dijadikan dat
 ## Modeling
 
 Proses pembuatan model/training set dibuat dengan menggabungkan tabel dari node Ask User for Move Ratings dengan data training (80%) menggunakan node **Spark Concatenate**.
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/12_modellingfull.png" width="500"/>
 
 Setelah itu, model dibuat menggunakan node **Spark Collaborative Filtering Learner.**
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/13_CF%20config.png" width="500"/>
 
 
 
 ## Evaluation
 Model dievaluasi menggunakan node **Spark Predictor**, dengan membandingkan model dengan data testing.
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/15_sparkpredictor.png" width="500"/>
 
 Setelah menghilangkan nilai NaN dengan **Spark Missing Value**, error akan dihitung menggunakan node **Spark Numeric Scorer**.
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/16_NaNremover.png" width="500"/>
   <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/17_numericscorercofig.png" width="500"/>
   
