@@ -43,36 +43,44 @@ Node Ask User for Movie Ratings berisi beberapa komponen, yaitu **Component Inpu
 
 
 Node no ratings berisi beberapa komponen, yaitu **Component Input, Constant Value Column, Column Filter, Column Resorter, dan Component Output.**
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/6_norating.png" width="500"/>
 
 
-Setelah itu, kmasing-masing tabel dimasukkan ke dalam Spark menggunakan node **Table to Spark**.
+Setelah itu, masing-masing tabel dimasukkan ke dalam Spark menggunakan node **Table to Spark**.
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/7_preparationcsvmovies.png" width="500"/>
 
 ### ratings.csv
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/11_ratingpreparation.png" width="500"/>
+ 
 File CSV ratings.csv dimasukkan ke Spark menggunakan node **CSV to Spark**.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/9_ratingcsvtospark.png" width="500"/>
 
 Selanjutnya, bagi data menjadi 2 dengan perbandingan 80%-20% untuk dijadikan data training dan data testing menggunakan **Spark Partitioning**.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+<https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/10_Sparkpartitioning.png" width="500"/>
 
 
 ## Modeling
 
 Proses pembuatan model/training set dibuat dengan menggabungkan tabel dari node Ask User for Move Ratings dengan data training (80%) menggunakan node **Spark Concatenate**.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/12_modellingfull.png" width="500"/>
 
 Setelah itu, model dibuat menggunakan node **Spark Collaborative Filtering Learner.**
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/13_CF%20config.png" width="500"/>
 
 
 
 ## Evaluation
 Model dievaluasi menggunakan node **Spark Predictor**, dengan membandingkan model dengan data testing.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/15_sparkpredictor.png" width="500"/>
 
 Setelah menghilangkan nilai NaN dengan **Spark Missing Value**, error akan dihitung menggunakan node **Spark Numeric Scorer**.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/16_NaNremover.png" width="500"/>
+  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/17_numericscorercofig.png" width="500"/>
+  
+ Hasil penghitungan error adalah sebagai berikut.
+   <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/19_numericscore.png" width="500"/>
 
 
 ## Deployment
