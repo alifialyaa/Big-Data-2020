@@ -84,12 +84,17 @@ Setelah menghilangkan nilai NaN dengan **Spark Missing Value**, error akan dihit
   <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/17_numericscorercofig.png" width="500"/>
   
  Hasil penghitungan error adalah sebagai berikut.
-   <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/19_numericscore.png" width="500"/>
+ 
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/19_numericscore.png" width="500"/>
 
 
 ## Deployment
+
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/19_numericscore.png" width="500"/>
+
 Deployment merupakan proses pembuatan rekomendasi untuk user tertentu. Dibuat dengan node **Spark Predictor**, node ini digunakan untuk membuat rating user pada film yang didak dinilai.
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
+
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/19_numericscore.png" width="500"/>
 
 Setelah itu, hasil prediksi dibawa ke KNIME menggunakan node Spark to Table untuk diolah lebih lanjut.
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/1_WorkflowFull.png" width="500"/>
