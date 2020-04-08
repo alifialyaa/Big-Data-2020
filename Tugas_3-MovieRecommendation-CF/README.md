@@ -52,7 +52,7 @@ Setelah itu, masing-masing tabel dimasukkan ke dalam Spark menggunakan node **Ta
 
 ### ratings.csv
 
-<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/11_ratingpreparation.png" width="500"/>
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/11_ratingpreparation.png"/>
  
 File CSV ratings.csv dimasukkan ke Spark menggunakan node **CSV to Spark**.
 <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/9_ratingcsvtospark.png" width="500"/>
@@ -66,7 +66,7 @@ Selanjutnya, bagi data menjadi 2 dengan perbandingan 80%-20% untuk dijadikan dat
 
 Proses pembuatan model/training set dibuat dengan menggabungkan tabel dari node Ask User for Move Ratings dengan data training (80%) menggunakan node **Spark Concatenate**.
 
- <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/12_modellingfull.png" width="500"/>
+ <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/12_modellingfull.png"/>
 
 Setelah itu, model dibuat menggunakan node **Spark Collaborative Filtering Learner.**
 
@@ -98,6 +98,7 @@ Deployment merupakan proses pembuatan rekomendasi untuk user tertentu. Dibuat de
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/21_sparkpredictor.png" width="500"/>
 
 Setelah itu, hasil prediksi dibawa ke KNIME menggunakan node Spark to Table untuk diolah lebih lanjut.
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/22_sparktotable.png"/>
 
 Data tersebut dibawa ke node Top 20 Recommended movies yang berisi beberapa node, yaitu **Row Filter (untuk menghilangkan nilai NaN), Sorter (untuk mengurutkan hasil prediksi), Row Filter (untuk mengambil 10 film teratas), File Reader (untuk mengambil id, judul, dan genre film), dan Joiner (untuk menggabungkan kolom dari Row Filter dengan File Reader).**
@@ -105,6 +106,7 @@ Data tersebut dibawa ke node Top 20 Recommended movies yang berisi beberapa node
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/23_top20.png" width="500"/>
 
 Setelah itu, hasil rekomendasi ditampilkan menggunakan Display Recommendations berupa tampilan web. Hasil prediksi juga bisa disimpan ke dalam bentuk file sesuai kebutuhan, misal CSV.
+
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/26_outputnodes.png"/>
 
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/24_informationdisplay.png" width="500"/>
