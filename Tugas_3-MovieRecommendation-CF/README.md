@@ -112,3 +112,17 @@ Setelah itu, hasil rekomendasi ditampilkan menggunakan Display Recommendations b
  <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/24_informationdisplay.png" width="500"/>
  
   <img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/25_hasilcsv.png" width="500"/>
+  
+## Perbandingan Waktu Pembacaan File
+### ratings.csv
+File ratings.csv memiliki jumlah records cukup besar. Di workflow tertulis bahwa pembacaan file menggunakan node File Reader akan memakan waktu cukup lama. Berikut adalah perbandingan waktunya.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/29_ratingscsvtime.png" width="500"/>
+
+### movies.csv
+Dibandingkan dengan file ratings.csv, movies.csv memiliki jumlah records lebih sedikit. Pada workflow sudah digunakan node File Reader untuk membaca file. Berikut adalah perbandingan waktu pembacaan file antara node File Reader dan CSV to Spark.
+
+<img src="https://github.com/alifialyaa/Big-Data-2020/blob/master/Tugas_3-MovieRecommendation-CF/pictures/28_time-moviescsv.png" width="500"/>
+
+### Kesimpulan
+Node **CSV to Spark** **akan lebih optimal digunakan** jika **file yang akan dibuka memiliki records cukup besar**. Sebaliknya, node CSV to Spark akan membutuhkan waktu lama untuk membuka file dengan jumlah record sedikit. 
