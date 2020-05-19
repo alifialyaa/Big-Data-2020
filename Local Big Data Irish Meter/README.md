@@ -1,4 +1,4 @@
-# Local Bog Data Irish Meter
+# Local Big Data Irish Meter
 
 Folder ini berisi laporan mengenai *workflow* [Local Big Data Irish Meter](https://hub.knime.com/knime/spaces/Education/latest/Courses/L4-BD%20Introduction%20to%20Big%20Data%20with%20KNIME%20Analytics%20Platform/3_Spark/4_Examples/09_Big_Data_Irish_Meter_on_Spark_only) sebagai tugas mata kuliah Big Data. Laporan ini dibuat oleh Alifiannisa Alyahasna Wighneswara (05111740000011)
 
